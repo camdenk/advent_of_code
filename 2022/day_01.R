@@ -1,12 +1,8 @@
 library(tidyverse)
-library(rvest)
 source("data_helper.R")
 
 
-raw_data <- get_data(1, 
-                     keyring::key_get("RStudio Keyring Secrets", 
-                                      "Advent of Code Session Cookie"),
-                     2022) %>% 
+raw_data <- get_data(1, 2022) %>% 
   httr::content(encoding = "UTF-8") %>% 
   read_lines()
 
