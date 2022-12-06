@@ -8,10 +8,11 @@ raw_data <- get_data(6, 2022) %>%
 # Part one
 no_matches <- TRUE
 counter <- 0
+buffer <- 3
 
 while (no_matches) {
   counter <- counter + 1
-  substring <- substring(raw_data, counter, counter+3)
+  substring <- substring(raw_data, counter, counter+buffer)
   
   split_string <- str_split(substring, "")
   
@@ -24,16 +25,17 @@ while (no_matches) {
   no_matches <- max_char_usage > 1
 }
 
-answer <- counter +3
+answer <- counter + buffer
 
 
 # Part two
 no_matches <- TRUE
 counter <- 0
+buffer <- 13
 
 while (no_matches) {
   counter <- counter + 1
-  substring <- substring(raw_data, counter, counter+13)
+  substring <- substring(raw_data, counter, counter+buffer)
   
   split_string <- str_split(substring, "")
   
@@ -46,4 +48,4 @@ while (no_matches) {
   no_matches <- max_char_usage > 1
 }
 
-answer <- counter +13
+answer <- counter + buffer
